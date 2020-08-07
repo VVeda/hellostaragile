@@ -27,6 +27,7 @@ public class HelloWebApp extends HttpServlet {
         	out.println("<p>A Random Number v1 : <strong>" + Math.random() + "</strong></p>");
            	out.println("<P>Max Number v1 : <strong>" +Math.max(5,8) + "</strong></p>");
 	       	out.println("<P>Min Number v1 : <strong>" +Math.min(5,8) + "</strong></p> ");
+		out.println("<P>Squareroot v1 : <strong>" +Math.sqrt(5) + "</strong></p> ");
  
         	out.println("</body>");
         	out.println("</html>");   
