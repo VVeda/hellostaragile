@@ -18,14 +18,16 @@ public class HelloWebApp extends HttpServlet {
         	resp.setContentType("text/html");
         	
         	out.println("<html>");
-        	out.println("<body bgcolor=\"Aqua\">");
+        	out.println("<body bgcolor=\"#A9A9A9\">");
         	//out.println("<body bgcolor=\"Green\">");
         	out.println("<h1>Hello from Staragile</h1>");
         	
         	out.println("<h3>Demo Java Project for Staragile DevOps certification Jul-2020 from Prashant Beniwal</h3>");
         	
         	out.println("<p>A Random Number v1 : <strong>" + Math.random() + "</strong></p>");
-           	
+           	out.println("<P>Max Number v1 : <strong>" +Math.Max(5,10) + "</strong></p>");
+	       	out.println("<P>Min Number v1 : <strong>" +Math.Min(5,10) + "</strong></p> ");
+ 
         	out.println("</body>");
         	out.println("</html>");   
         
