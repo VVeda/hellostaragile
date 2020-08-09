@@ -1,3 +1,3 @@
-FROM vedavrao/hellostaragileassign
+FROM tomcat
 
 COPY target/hellostaragile.war /usr/local/tomcat/webapps/
