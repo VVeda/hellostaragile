@@ -22,7 +22,7 @@
        chdir: /home/veda/DevOpsAssignment/hellostaragile
      - name: Remove Docker Container
        shell:
-       cmd: docker rm --force hellostaragile || echo
+       cmd: docker rm --force --name=mytomcat || echo
      - name: Start Docker Container
        shell:
-       cmd: docker run -d --name=hellostaragile -p {{ dockerport }}:{{ contport }} hellostaragilewithwar
+       cmd: docker run -d --name=--name=mytomcat -p {{ dockerport }}:{{ contport }} hellostaragilewithwar
