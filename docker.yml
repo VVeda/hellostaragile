@@ -1,0 +1,28 @@
+---
+- hosts: node
+  vars:
+    dockerport: 8888
+    contport: 8080
+    become: true
+    tasks:
+     - name: Update apt repo
+       apt: update_cache=yes name=docker.io state=present
+     - name: Clone Git repo
+       git:
+        repo: https://github.com/VVeda/hellostaragile.git
+        dest: /home/veda/DevOpsAssignment/
+        force: yes
+     - name: Build
+       shell:
+         cmd: mvn clean package
+         chdir: /home/veda/DevOpsAssignment/
+     - name: Create Image
+       shell:
+       cmd: docker build -t hellostaragilewithwar .
+       chdir: /home/veda/DevOpsAssignment/
+     - name: Remove Docker Container
+       shell:
+       cmd: docker rm --force hellostaragile || echo
+     - name: Start Docker Container
+       shell:
+       cmd: docker run -d --name=hellostaragile -p {{ dockerport }}:{{ contport }} hellostaragilewithwar
